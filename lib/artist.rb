@@ -10,8 +10,6 @@ class Artist
         self.save
     end
     
- 
-    
     def name=(name)
         @name = name
     end

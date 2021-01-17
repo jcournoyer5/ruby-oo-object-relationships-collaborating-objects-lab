@@ -18,13 +18,18 @@ class Song
     end
     
     def self.new_by_filename
-        song = Song.new(song_name)
-        song.artist = self
+        song = Song.new(file_name)
+        @song = song
     end
     
     def save
         @@all << self
     end
+    
+    def artist_name=(name)
+         artist = Artist.new
+        artist.name = name
+    end    
     
     
     
