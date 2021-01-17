@@ -1,3 +1,4 @@
+require "pry"
 class Artist
     
     @@all = []
@@ -7,11 +8,7 @@ class Artist
     
     def initialize(name)
         @name = name
-        self.save
-    end
-    
-    def name=(name)
-        @name = name
+        save
     end
     
     def self.all
@@ -28,13 +25,20 @@ class Artist
     
     def add_song(song)
         song.artist = self
-        Artist.all
     end
     
-    def self.find_or_create_by_name(artist)
+    def self.find_or_create_by_name(name)
+       artist = self.find(name) 
+      # binding.pry
+       if artist
+           return artist
+       else  
         artist = Artist.new
-        #song.artist = self
-        @artist
+        artist.name = name
+        return artist 
+          
+       end       
+        
     end
     
     def self.find(name)
