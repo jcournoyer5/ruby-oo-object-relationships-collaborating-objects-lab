@@ -9,25 +9,17 @@ class Song
         self.save
     end
     
-    # def artist=(artist)
-    #     @artist = artist
-    #     Artist.count << self
-    # end  
-    
     def artist
         @artist
     end   
     
-    def artist_name
-      if self.artist
-          self.artist.name
-      else  
-          nil
-      end      
-    end   
-    
     def self.all
         @@all
+    end
+    
+    def self.new_by_filename
+        song = Song.new(song_name)
+        song.artist = self
     end
     
     def save
