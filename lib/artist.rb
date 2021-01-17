@@ -28,16 +28,17 @@ class Artist
     end
     
     def self.find_or_create_by_name(name)
-       artist = self.find(name) 
-      # binding.pry
-       if artist
-           return artist
-       else  
-        artist = Artist.new
-        artist.name = name
-        return artist 
+        self.find(name) ? self.find(name) : self.new(name)
+    #   artist = self.find(name) 
+    #   # binding.pry
+    #   if artist
+    #       return artist
+    #   else  
+    #     artist = Artist.new
+    #     artist.name = name
+    #     return artist 
           
-       end       
+       #end       
         
     end
     
