@@ -10,6 +10,8 @@ class Artist
         self.save
     end
     
+ 
+    
     def name=(name)
         @name = name
     end
@@ -28,11 +30,12 @@ class Artist
     
     def add_song(song)
         song.artist = self
+        Artist.all
     end
     
     def self.find_or_create_by_name(artist)
-        artist = Artist.new(artist_name)
-        song.artist = self
+        artist = Artist.new
+        #song.artist = self
         @artist
     end
     
