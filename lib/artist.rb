@@ -30,10 +30,14 @@ class Artist
         song.artist = self
     end
     
-    def self.find_or_create_by_name
-        song = Song.new(song_name)
+    def self.find_or_create_by_name(artist)
+        artist = Artist.new(artist_name)
         song.artist = self
-        @@count << song
+        @artist
+    end
+    
+    def self.find(name)
+    self.all.find {|artist| artist.name == name }
     end
     
     def print_songs
